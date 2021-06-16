@@ -3,13 +3,13 @@ import useFetch from './useFetch';
 import { useState } from 'react';
 
 const Curiosity = () => {
-    const [sol, setSol] = useState('1');
+    const [sol, setSol] = useState('14');
     const [camera, setCamera] = useState('fhaz')
     const { data, isPending, error } = useFetch(`https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=${sol}&camera=${camera}&page=1&api_key=qQ3X7Uk2HHs4IDxWimSn50yxS6vAq87frJe5Dluy`);
     console.log(data);
     
     return ( 
-        <div className="curiosity">
+        <div>
             <h1 style={{color: 'white', textAlign: 'center', marginBottom: '100px'}} >This is Curiosity page</h1>
 
             

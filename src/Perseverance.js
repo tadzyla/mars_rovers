@@ -2,15 +2,15 @@ import React from 'react'
 import useFetch from './useFetch';
 import { useState } from 'react';
 
-const Spirit = () => {
-    const [sol, setSol] = useState('100');
-    const [camera, setCamera] = useState('navcam')
-    const { data, isPending, error } = useFetch(`https://api.nasa.gov/mars-photos/api/v1/rovers/spirit/photos?sol=${sol}&camera=${camera}&page=1&api_key=qQ3X7Uk2HHs4IDxWimSn50yxS6vAq87frJe5Dluy`);
+const Perseverance = () => {
+    const [sol, setSol] = useState('113');
+    const [camera, setCamera] = useState('NAVCAM_LEFT')
+    const { data, isPending, error } = useFetch(`https://api.nasa.gov/mars-photos/api/v1/rovers/perseverance/photos?sol=${sol}&camera=${camera}&page=1&api_key=qQ3X7Uk2HHs4IDxWimSn50yxS6vAq87frJe5Dluy`);
     console.log(data);
     
     return ( 
         <div>
-            <h1 style={{color: 'white', textAlign: 'center', marginBottom: '100px'}} >This is Spirit page</h1>
+            <h1 style={{color: 'white', textAlign: 'center', marginBottom: '100px'}} >This is Perseverance page</h1>
 
             
             {error && <div>{ error }</div>}
@@ -32,14 +32,18 @@ const Spirit = () => {
                         value={camera}
                         onChange={(e) => setCamera(e.target.value)}
                     >
-                        <option value="fhaz">Front Hazard Avoindance Camera</option>
-                        <option value="rhaz">Rear Hazard Avoindance Camera</option>
-                        <option value="navcam">Navigation Camera</option>
+                        <option value="NAVCAM_LEFT">Navigation Camera - Left</option>
+                        <option value="NAVCAM_RIGHT">Navigation Camera - Right</option>
+                        <option value="FRONT_HAZCAM_LEFT_A">Front Hazard Avoidance Camera - Left</option>
+                        <option value="FRONT_HAZCAM_RIGHT_A">Front Hazard Avoidance Camera - Right</option>
+                        <option value="REAR_HAZCAM_LEFT">Rear Hazard Avoidance Camera - Left</option>
+                        <option value="REAR_HAZCAM_RIGHT">Rear Hazard Avoidance Camera - Right</option>
+
                     </select>
                 </form>
             </div>
             
-            {data && <p style={{padding: '30px', textAlign: 'center', color: 'white'}} >Here are Spirit photos on sol {sol} taken with {camera} camera, if it's loading no photos, choose another camera or sol</p>}
+            {data && <p style={{padding: '30px', textAlign: 'center', color: 'white'}} >Here are Perseverance photos on sol {sol} taken with {camera} camera, if it's loading no photos, choose another camera or sol</p>}
 
             {data &&  data.photos.map((photo, index)=> 
                         <div> 
@@ -52,4 +56,4 @@ const Spirit = () => {
      );
 }
  
-export default Spirit;
+export default Perseverance;

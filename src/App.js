@@ -1,9 +1,10 @@
 import Home from './Home';
 import Navbar from './Navbar';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Curiosity from './Curiosity';
 import Opportunity from './Opportunity';
 import Spirit from './Spirit';
+import Perseverance from './Perseverance';
 
 function App() {
   return (
@@ -24,6 +25,9 @@ function App() {
           </Route>
           <Route exact path="/spirit"> 
             <Spirit />
+          </Route>
+          <Route exact path="/perseverance"> 
+            <Perseverance />
           </Route>
         </Switch>
         </div>
