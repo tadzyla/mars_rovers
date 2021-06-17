@@ -6,11 +6,9 @@ const Home = () => {
 
     return ( 
       <>
-           <h1 style={{padding: '15px', textAlign: 'center'}}>This is home page for Mars Rovers</h1>
-           <h3 style={{padding: '10px', textAlign: 'center'}} >Choose any rover from the top menu to look at the photo gallery</h3>
+           <h1 style={{padding: '25px', textAlign: 'center', color: 'ivory'}}>This is home page for Mars Rovers</h1>
 
-
-      <table style={{width: '100%', padding: '20px'}}>
+      <table style={{width: '100%', padding: '5px', boxShadow: '3px 3px 10px 5px rgb(221, 100, 73)', margin: '30px'}}>
             <tr>
             <td><img src="./1.jpg" alt="photo1" width="85%" /></td>
                <td><img src="./1.jpeg" alt="photo2" width="85%" /> </td>
@@ -24,7 +22,7 @@ const Home = () => {
                <td><img src="./10.jpg" alt="photo8" width="85%" /> </td>
             </tr>
       </table>
-      
+
         <div>
             {error && <div>{ error }</div>}
             {isPending && <div style={{color: 'white', font: 'caption'}} >Getting information from Mars, please be patient...</div> }

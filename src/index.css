@@ -3,7 +3,7 @@
 * {
   margin: 0;
   font-family: "Quicksand";
-  color: rgb(167, 50, 50);
+  color: orangered;
 }
 .navbar {
   padding: 20px;
@@ -14,18 +14,15 @@
   border-radius: 5px;
   box-shadow: 3px 3px 10px 5px tomato;
 }
-.navbar h1 {
-  color: #822b10;
-}
+
 .navbar .links {
   margin-left: auto;
-  
 }
 
 .navbar a {
   margin-left: 36px;
   text-decoration: none;
-  padding: 25px;
+  padding: 15px;
   border-radius: 10px;
 }
 
