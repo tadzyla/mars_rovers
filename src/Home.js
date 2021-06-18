@@ -10,7 +10,7 @@ const Home = () => {
 
       <table style={{width: '100%', padding: '5px', boxShadow: '3px 3px 10px 5px rgb(221, 100, 73)', margin: '30px'}}>
             <tr>
-            <td><img src="./1.jpg" alt="photo1" width="85%" /></td>
+               <td><img src="./1.jpg" alt="photo1" width="85%" /></td>
                <td><img src="./1.jpeg" alt="photo2" width="85%" /> </td>
                <td><img src="./2.jpg" alt="photo3" width="85%" /> </td>
                <td><img src="./2.jpeg" alt="photo4" width="85%" /> </td>
@@ -28,7 +28,7 @@ const Home = () => {
             {isPending && <div style={{color: 'white', font: 'caption'}} >Getting information from Mars, please be patient...</div> }
            {data &&  data.rovers.map((rover, index)=> 
                         <div>
-                            <h3 style={{color: 'white', padding: '5px'}} > 
+                            <h3 style={{color: 'white', padding: '15px'}} > 
                               <big style={{padding: '5px'}}>{rover.name}</big>  : 
                               (Launch date - {rover.launch_date}, 
                               Landing date - {rover.landing_date}, 

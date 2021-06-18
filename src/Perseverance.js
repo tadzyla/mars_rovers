@@ -1,8 +1,28 @@
 import React from 'react'
 import useFetch from './useFetch';
 import { useState } from 'react';
+import GridList from '@material-ui/core/GridList';
+import GridListTile from '@material-ui/core/GridListTile';
+import { makeStyles } from '@material-ui/core/styles';
+
+const useStyles = makeStyles((theme) => ({
+    root: {
+      display: 'flex',
+      flexWrap: 'wrap',
+      justifyContent: 'space-around',
+      overflow: 'hidden',
+      backgroundColor: 'black',
+    
+    },
+    gridList: {
+      width: 1000,
+      height: 1000,
+    },
+  }));
+  
 
 const Perseverance = () => {
+    const classes = useStyles();
     const [sol, setSol] = useState('113');
     const [camera, setCamera] = useState('NAVCAM_LEFT')
     const { data, isPending, error } = useFetch(`https://api.nasa.gov/mars-photos/api/v1/rovers/perseverance/photos?sol=${sol}&camera=${camera}&page=1&api_key=qQ3X7Uk2HHs4IDxWimSn50yxS6vAq87frJe5Dluy`);
@@ -10,7 +30,7 @@ const Perseverance = () => {
     
     return ( 
         <div>
-            <h1 style={{color: 'white', textAlign: 'center', marginBottom: '100px'}} >This is Perseverance page</h1>
+            <h1 style={{color: 'white', textAlign: 'center', marginBottom: '50px'}} >This is Perseverance page</h1>
 
             
             {error && <div>{ error }</div>}
@@ -19,41 +39,45 @@ const Perseverance = () => {
             <div className="search">
                 <h2>Search photos by number of SOL (Martian rotation) and camera type, gallery will load automatically</h2>
                 <form>
-                    <label>Write sol number here</label>
+                    <label style={{marginTop: '30px'}}>Write sol number here</label>
                     <input 
                     type="text"
                     maxLength='4'
                     value={sol}
                     onChange={(e) => setSol(e.target.value)}
+                    style={{boxShadow: '3px 3px 20px 2px rgb(221, 100, 73)', padding: '10px', color: 'black', fontSize: '15px'}}
                     />
                     
-                    <label>Select camera type</label>
+                    <label style={{marginTop: '30px'}}>Select camera type</label>
                     <select
                         value={camera}
                         onChange={(e) => setCamera(e.target.value)}
-                    >
-                        <option value="NAVCAM_LEFT">Navigation Camera - Left</option>
-                        <option value="NAVCAM_RIGHT">Navigation Camera - Right</option>
-                        <option value="FRONT_HAZCAM_LEFT_A">Front Hazard Avoidance Camera - Left</option>
-                        <option value="FRONT_HAZCAM_RIGHT_A">Front Hazard Avoidance Camera - Right</option>
-                        <option value="REAR_HAZCAM_LEFT">Rear Hazard Avoidance Camera - Left</option>
-                        <option value="REAR_HAZCAM_RIGHT">Rear Hazard Avoidance Camera - Right</option>
-
+                        style={{boxShadow: '3px 3px 20px 2px rgb(221, 100, 73)', padding: '10px', color: 'black', fontSize: '15px'}}
+                        >
+                        <option style={{color: 'black'}} value="fhaz">Front Hazard Avoindance Camera</option>
+                        <option style={{color: 'black'}} value="rhaz">Rear Hazard Avoindance Camera</option>
+                        <option style={{color: 'black'}} value="navcam">Navigation Camera</option>
                     </select>
                 </form>
             </div>
             
-            {data && <p style={{padding: '30px', textAlign: 'center', color: 'white'}} >Here are Perseverance photos on sol {sol} taken with {camera} camera, if it's loading no photos, choose another camera or sol</p>}
+            {data && <p style={{padding: '30px', textAlign: 'center', color: 'white'}} >
+                        Here are Perseverance photos on sol {sol} taken with {camera} camera, if it's loading no photos, choose another camera or sol
+                    </p>
+            }
 
-            {data &&  data.photos.map((photo, index)=> 
-                        <div> 
-                            <p style={{color: 'white'}}>Photo {index+1}</p>
-                            <img src={photo.img_src} alt={photo.camera.full_name} />
+            {data &&  <div className={classes.root}>
+                            <GridList cellHeight={460} className={classes.gridList} cols={2}>
+                                {data.photos.map(photo=> 
+                                    <GridListTile key={photo.img_src} cols={photo.cols || 1}>
+                                        <img src={photo.img_src} alt={photo.camera.full_name} 
+                                        style={{width: '85%', heigth: '85%',  margin: '10px', boxShadow: '2px 2px 30px 5px rgb(221, 100, 73)', borderRadius: '10px'}}/>
+                                    </GridListTile>
+                                )}
+                            </GridList>
                         </div>
-                )}
-
-        </div>
-     );
-}
+            }
+            </div>
+    )}
  
 export default Perseverance;
