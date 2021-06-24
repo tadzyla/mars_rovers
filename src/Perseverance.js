@@ -10,12 +10,10 @@ const useStyles = makeStyles((theme) => ({
       display: 'flex',
       flexWrap: 'wrap',
       justifyContent: 'space-around',
-      overflow: 'hidden',
-      backgroundColor: 'black',
-    
+      overflow: 'hidden'
     },
     gridList: {
-      width: 1000,
+      width: '100%',
       height: 1000,
     },
   }));
@@ -26,34 +24,34 @@ const Perseverance = () => {
     const [sol, setSol] = useState('113');
     const [camera, setCamera] = useState('NAVCAM_LEFT')
     const { data, isPending, error } = useFetch(`https://api.nasa.gov/mars-photos/api/v1/rovers/perseverance/photos?sol=${sol}&camera=${camera}&page=1&api_key=qQ3X7Uk2HHs4IDxWimSn50yxS6vAq87frJe5Dluy`);
-    console.log(data);
+    
     
     return ( 
         <div>
-            <h1 style={{color: 'white', textAlign: 'center', marginBottom: '50px'}} >This is Perseverance page</h1>
+            <h1 className="title">This is Perseverance page</h1>
 
             
             {error && <div>{ error }</div>}
-            {isPending && <div style={{color: 'white', font: 'caption'}} >Getting photos from Mars, please be patient...</div> }
+            {isPending && <div className="title">Getting photos from Mars, please be patient...</div> }
 
             <div className="search">
-                <h2>Search photos by number of SOL (Martian rotation) and camera type, gallery will load automatically</h2>
+                <h3 className="title">Search photos by number of SOL (Martian rotation) and camera type, gallery will load automatically</h3>
                 <form>
-                    <label style={{marginTop: '30px'}}>Write sol number here</label>
+                    <label className="label">Write sol number here</label>
                     <input 
+                    className="input"
                     type="text"
                     maxLength='4'
                     value={sol}
                     onChange={(e) => setSol(e.target.value)}
-                    style={{boxShadow: '3px 3px 20px 2px rgb(221, 100, 73)', padding: '10px', color: 'black', fontSize: '15px'}}
                     />
                     
-                    <label style={{marginTop: '30px'}}>Select camera type</label>
+                    <label className="label">Select camera type</label>
                     <select
+                        className="input"
                         value={camera}
                         onChange={(e) => setCamera(e.target.value)}
-                        style={{boxShadow: '3px 3px 20px 2px rgb(221, 100, 73)', padding: '10px', color: 'black', fontSize: '15px'}}
-                        >
+                    >
                         <option style={{color: 'black'}} value="fhaz">Front Hazard Avoindance Camera</option>
                         <option style={{color: 'black'}} value="rhaz">Rear Hazard Avoindance Camera</option>
                         <option style={{color: 'black'}} value="navcam">Navigation Camera</option>
@@ -61,17 +59,13 @@ const Perseverance = () => {
                 </form>
             </div>
             
-            {data && <p style={{padding: '30px', textAlign: 'center', color: 'white'}} >
-                        Here are Perseverance photos on sol {sol} taken with {camera} camera, if it's loading no photos, choose another camera or sol
-                    </p>
-            }
-
             {data &&  <div className={classes.root}>
-                            <GridList cellHeight={460} className={classes.gridList} cols={2}>
+                            <h3 className="title">Here are Perseverance photos on SOL {sol} taken with {camera} camera <br/> 
+                            <small className="title">*If it's loading no photos, choose another camera or SOL</small> </h3>
+                            <GridList cellHeight={700} className={classes.gridList} cols={2}>
                                 {data.photos.map(photo=> 
                                     <GridListTile key={photo.img_src} cols={photo.cols || 1}>
-                                        <img src={photo.img_src} alt={photo.camera.full_name} 
-                                        style={{width: '85%', heigth: '85%',  margin: '10px', boxShadow: '2px 2px 30px 5px rgb(221, 100, 73)', borderRadius: '10px'}}/>
+                                        <img src={photo.img_src} alt={photo.camera.full_name} className="image" />
                                     </GridListTile>
                                 )}
                             </GridList>

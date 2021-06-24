@@ -12,7 +12,7 @@
   max-width: 75%;
   margin: 0 auto;
   border-radius: 5px;
-  box-shadow: 3px 3px 10px 5px tomato;
+  box-shadow:  0 20px 37px rgb(255, 69, 0, 0.7);
 }
 
 .navbar .links {
@@ -27,8 +27,7 @@
 }
 
 .navbar a:hover {
-  box-shadow: 3px 3px 10px 5px rgb(221, 100, 73);
-
+  box-shadow:  0 8px 20px rgb(255, 69, 0, 0.6);
 }
 .content {
   max-width: 80%;
@@ -36,6 +35,23 @@
   padding: 20px;
 }
 
+.table {
+  width: 100%; 
+  box-shadow:  0 27px 29px rgb(255, 69, 0, 0.7);
+  margin-top: 50px;
+  padding: 20px;
+}
+
+.title {
+  color: rgb(255, 229, 215);
+  text-align: center; 
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+.label {
+  margin-top: 30px;
+}
 
 /* search component */
 .search {
@@ -61,4 +77,17 @@
   border: 1px solid #ddd;
   box-sizing: border-box;
   display: block;
+}
+
+.input {
+  box-shadow:  0 10px 27px rgb(255, 69, 0, 0.7);
+  padding: 10px; 
+  color: black; 
+  font-size: 18px;
+}
+
+.image {
+  width: 95%;
+  height: 95%;
+  border-radius: 5px
 }
