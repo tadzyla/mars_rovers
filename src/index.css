@@ -7,7 +7,10 @@
 }
 .navbar {
   padding: 20px;
+  overflow: hidden;
   display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-end;
   align-items: center;
   max-width: 75%;
   margin: 0 auto;
@@ -24,6 +27,8 @@
   text-decoration: none;
   padding: 15px;
   border-radius: 10px;
+  float: right;
+  display: flex;
 }
 
 .navbar a:hover {
@@ -90,4 +95,18 @@
   width: 95%;
   height: 95%;
   border-radius: 5px
+}
+
+@media all and (max-width: 800px) {
+  .navigation {
+    /* When on medium sized screens, we center it by evenly distributing empty space around items */
+    justify-content: space-around;
+  }
+}
+
+@media all and (max-width: 500px) {
+  .navigation {
+    /* On small screens, we are no longer using row direction but column */
+    flex-direction: column;
+  }
 }
