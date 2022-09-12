@@ -1,12 +1,12 @@
 import useFetch from './useFetch';
 
 const Home = () => {
-   const {data, isPending, error } = useFetch('https://mars-photos.herokuapp.com/api/v1/rovers')
-   
+   const {data, isPending, error } = useFetch('https://mars-photos.herokuapp.com/api/v1/rovers')  // destructing properties from url endpoint
+   console.log(data?.rovers[1].name);
 
     return ( 
       <>
-       <h1 className="title">This is home page for Mars Rovers</h1>
+       <h1 className="title">Welcome to Mars</h1>
 
       <table className="table">
             <tr>
@@ -23,17 +23,17 @@ const Home = () => {
             </tr>
       </table>
 
-        <div>
+        <div className="rovers_stats">
             {error && <div>{ error }</div>}
             {isPending && <div className="title" >Getting information from Mars, please be patient...</div> }
-            {data &&  data.rovers.map(rover=> 
+            {data?.rovers.map(rover => 
                   <div>
                      <h3 style={{color: 'white', padding: '15px'}} > 
-                        <big style={{padding: '5px'}}>{rover.name}</big>  : 
-                           (Launch date - {rover.launch_date}, 
+                        <big className='bigText'>{rover.name}</big>  : 
+                           Launch date - {rover.launch_date}, 
                            Landing date - {rover.landing_date}, 
                            Max Sol - {rover.max_sol},
-                           Status - {rover.status},
+                           Status - <big className='active'>{rover.status}</big>,
                            Total photos - {rover.total_photos}
                      </h3>
                   </div>

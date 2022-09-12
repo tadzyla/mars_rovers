@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 
 
-const useFetch = (url) => {
+const useFetch = (url) => {                                 // custom hook, reusable
     const [data, setData] = useState();
     const [isPending, setIsPending] = useState(true);
     const [error, setError] = useState(null);
@@ -32,9 +32,9 @@ const useFetch = (url) => {
 
     return () => abortContr.abort();    
 
-    }, [url]);
+    }, [url]);  // whenever the data changes in url, this function reruns
 
-    return { data, isPending, error }
+    return { data, isPending, error }               // returning properties
 }
 
 export default useFetch;

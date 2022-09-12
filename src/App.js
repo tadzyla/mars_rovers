@@ -6,14 +6,14 @@ import Opportunity from './Opportunity';
 import Spirit from './Spirit';
 import Perseverance from './Perseverance';
 
-function App() {
+function App() {     // Switch component show only one router at the time
   return (
     <Router>
-      <div className="App" style={{backgroundColor: 'black'}}>
+      <div className="app">
         <Navbar />
 
-        <div className="content" >
-        <Switch>
+        <div className="content" > 
+        <Switch>                          
           <Route exact path="/"> 
             <Home />
           </Route>

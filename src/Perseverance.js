@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
     },
     gridList: {
       width: '100%',
-      height: 1000,
+      height: 'auto'
     },
   }));
   
@@ -52,9 +52,9 @@ const Perseverance = () => {
                         value={camera}
                         onChange={(e) => setCamera(e.target.value)}
                     >
-                        <option style={{color: 'black'}} value="fhaz">Front Hazard Avoindance Camera</option>
-                        <option style={{color: 'black'}} value="rhaz">Rear Hazard Avoindance Camera</option>
-                        <option style={{color: 'black'}} value="navcam">Navigation Camera</option>
+                        <option style={{color: 'black'}} value="NAVCAM_LEFT">Navigation Camera - Left</option>
+                        <option style={{color: 'black'}} value="MCZ_RIGHT">Mast Camera Zoom - Right</option>
+                        <option style={{color: 'black'}} value="FRONT_HAZCAM_RIGHT_A">Front Hazard Avoidance Camera - Right</option>
                     </select>
                 </form>
             </div>

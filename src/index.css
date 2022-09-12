@@ -1,42 +1,106 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
 
 * {
+  padding: 0;
   margin: 0;
   font-family: "Quicksand";
-  color: orangered;
-}
-.navbar {
-  padding: 20px;
-  overflow: hidden;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: flex-end;
-  align-items: center;
-  max-width: 75%;
-  margin: 0 auto;
-  border-radius: 5px;
-  box-shadow:  0 20px 37px rgb(255, 69, 0, 0.7);
 }
 
-.navbar .links {
-  margin-left: auto;
+:root {
+  --theme-color: #ff4400e4;
+  --bg-color: #141515;
+}
+
+body {
+  background-color: var(--bg-color);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--bg-color);
+  height: 6rem;
+  max-width: 75%;  
+  margin: 0 auto;
+  border-radius: 5px;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  box-shadow:  0 20px 37px var(--theme-color);
+}
+
+.mars_link {
+  font-size: 30px;
+  margin-left: 2rem;
+}
+
+.nav_links {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  gap: 2rem;
+  position: relative;
+  margin-right: 2rem;
+  font-size: 20px;
 }
 
 .navbar a {
-  margin-left: 36px;
+  color: var(--theme-color);
   text-decoration: none;
-  padding: 15px;
+  font-weight: 600;
+  padding: 1rem;
   border-radius: 10px;
-  float: right;
-  display: flex;
 }
 
 .navbar a:hover {
-  box-shadow:  0 8px 20px rgb(255, 69, 0, 0.6);
+  box-shadow:  0 8px 20px var(--theme-color);
 }
+
+.hamburger {
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  background-color: var(--bg-color);
+  width: 80%;
+  padding-bottom: 2rem;
+  flex-direction: column;
+  align-items: flex-end;
+  position: absolute;
+  right: 1px;
+  top: 5rem;
+}
+
+.hamburger a {
+  width: 6rem;
+  margin: 0 2rem 0 0;
+}
+
+.unvisible_menu {
+  display: none;
+}
+
+.menu {
+  display: none;
+  position: absolute;
+  border-style: none;
+  background-color: transparent;
+  right: 2rem;
+  color: var(--theme-color);
+}
+
+.menu img {
+  width: 3rem;
+}
+
+.menu:hover {
+  border-radius: 100%;
+  box-shadow:  0 2px 20px var(--theme-color);
+  cursor: pointer;
+}
+
 .content {
   max-width: 80%;
-  margin: 40px auto;
+  margin: 4rem auto 0;
   padding: 20px;
 }
 
@@ -53,6 +117,22 @@
   margin-bottom: 30px;
   margin-top: 30px;
 }
+
+.rovers_stats {
+  margin-top: 4rem;
+}
+
+.bigText {
+  padding: 5px;
+  color: var(--theme-color);
+}
+
+.active {
+  color: var(--theme-color);
+  font-size: 16px;
+}
+
+
 
 .label {
   margin-top: 30px;
@@ -91,8 +171,34 @@
   font-size: 18px;
 }
 
-.image {
-  width: 95%;
-  height: 95%;
-  border-radius: 5px
+
+
+@media screen and (max-width: 1300px) {
+
+  .navbar {
+    height: 5rem;
+  }
+
+  .nav_links {
+    font-size: 16px;
+    padding: .5rem;
+    gap: 1rem;
+  }
+  .mars_link {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .menu {
+    display: block;
+  }
+
+  .nav_links {
+    display: none;
+  }
 }

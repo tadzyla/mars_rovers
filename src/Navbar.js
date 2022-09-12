@@ -1,19 +1,40 @@
 import { Link } from 'react-router-dom'
+import { useState } from 'react';
+
 
 const Navbar = () => {
+
+    const [isExpanded, setIsExpanded] = useState(false)
+
     return ( 
         <nav className="navbar">
-                <Link style={{fontSize: '30px'}} to="/">Mars Rovers</Link>
+                <div className='mars_link'><Link to="/">Mars Rovers</Link></div>
 
-            <div className="links">
-                <Link to="/curiosity" style={{fontSize: '20px'}} >Curiosity</Link>
+                <div className='nav_links'>
 
-                <Link to="/opportunity" style={{fontSize: '20px'}} >Opportunity</Link>
+                    <Link to="/curiosity" >Curiosity</Link>
 
-                <Link to="/spirit" style={{fontSize: '20px'}} >Spirit</Link>
+                    <Link to="/opportunity" >Opportunity</Link>
 
-                <Link to="/perseverance" style={{fontSize: '20px'}} >Perseverance</Link>
-            </div>
+                    <Link to="/spirit" >Spirit</Link>
+
+                    <Link to="/perseverance" >Perseverance</Link>
+                </div>
+
+                <div className={isExpanded ? "hamburger" : "unvisible_menu"}>
+
+
+                    <Link onClick={() => {setIsExpanded(!isExpanded)}} to="/curiosity" >Curiosity</Link>
+
+                    <Link onClick={() => {setIsExpanded(!isExpanded)}} to="/opportunity" >Opportunity</Link>
+
+                    <Link onClick={() => {setIsExpanded(!isExpanded)}} to="/spirit" >Spirit</Link>
+
+                    <Link onClick={() => {setIsExpanded(!isExpanded)}} to="/perseverance" >Perseverance</Link>
+                    
+                </div>
+                <button onClick={() => {setIsExpanded(!isExpanded)}} className="menu"><img src="./rover.svg" alt="rover" /></button>
+
         </nav>
      );
 }
