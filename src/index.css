@@ -11,6 +11,8 @@
   --bg-color: #000000;
 }
 
+
+
 body {
   background-color: var(--bg-color);
 }
@@ -29,6 +31,7 @@ body {
   z-index: 1;
   box-shadow:  0 20px 37px var(--theme-color);
 }
+
 
 .mars_link {
   font-size: 30px;
@@ -99,13 +102,16 @@ body {
   cursor: pointer;
 }
 
+
 .mars-title {
+  position: relative;
   margin-bottom: 15rem;
 }
 
-.mars-image {
+
+.mars-image img {
   position: absolute;
-  top: 7rem;
+  top: -10rem;
   left: 45%;
   z-index: -1;
 }
@@ -127,12 +133,6 @@ body {
   width: 85%;
 }
 
-
-.table td img:hover {
-  cursor: pointer;
-  scale: 2;
-  transition: ease-in 400ms;
-}
 
 .title {
   color: rgb(255, 229, 215);
@@ -241,6 +241,12 @@ body {
     margin-top: 0;
   }
 
+  .mars-image img {
+    top: -5rem;
+    left: 30%;
+    width: 25rem;
+  }
+
 }
 
 @media screen and (max-width: 600px) {
@@ -251,6 +257,17 @@ body {
 
   .menu img {
     width: 2rem;
+  }
+
+
+  .mars-image img {
+    top: -20%;
+    left: 30%;
+    width: 15rem;
+  }
+
+  .mars-title {
+    margin-bottom: 11rem;
   }
 
   h3 {
