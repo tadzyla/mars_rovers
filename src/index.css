@@ -8,7 +8,7 @@
 
 :root {
   --theme-color: #ff4400e4;
-  --bg-color: #141515;
+  --bg-color: #000000;
 }
 
 body {
@@ -92,10 +92,22 @@ body {
   width: 3rem;
 }
 
+
 .menu:hover {
   border-radius: 100%;
   box-shadow:  0 2px 20px var(--theme-color);
   cursor: pointer;
+}
+
+.mars-title {
+  margin-bottom: 15rem;
+}
+
+.mars-image {
+  position: absolute;
+  top: 7rem;
+  left: 45%;
+  z-index: -1;
 }
 
 .content {
@@ -111,11 +123,29 @@ body {
   padding: 20px;
 }
 
+.table td img {
+  width: 85%;
+}
+
+
+.table td img:hover {
+  cursor: pointer;
+  scale: 2;
+  transition: ease-in 400ms;
+}
+
 .title {
   color: rgb(255, 229, 215);
   text-align: center; 
   margin-bottom: 30px;
-  margin-top: 30px;
+  margin-top: 5rem;
+}
+
+.mars {
+  margin-top: 9rem;
+  color: var(--theme-color);
+  font-size: 48px;
+  text-shadow: 12px 8px 11px var(--bg-color); ;
 }
 
 .rovers_stats {
@@ -187,9 +217,14 @@ body {
   .mars_link {
     font-size: 20px;
   }
+
+  .makeStyles-root-1 ul li, .makeStyles-root-3 ul li {
+    height: 20rem !important;
+  }
 }
 
 @media screen and (max-width: 1000px) {
+
   .hamburger {
     display: flex;
   }
@@ -201,4 +236,25 @@ body {
   .nav_links {
     display: none;
   }
+
+  .title {
+    margin-top: 0;
+  }
+
+}
+
+@media screen and (max-width: 600px) {
+
+  .makeStyles-root-1 ul li, .makeStyles-root-3 ul li, .makeStyles-root-4 ul li{
+    height: 10rem !important;
+  }
+
+  .menu img {
+    width: 2rem;
+  }
+
+  h3 {
+    font-size: 1rem;
+  }
+
 }

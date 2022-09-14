@@ -1,9 +1,8 @@
 import React from 'react'
 import useFetch from './useFetch';
 import { useState } from 'react';
-import GridList from '@material-ui/core/GridList';
-import GridListTile from '@material-ui/core/GridListTile';
 import { makeStyles } from '@material-ui/core/styles';
+import { ImageList, ImageListItem } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -60,15 +59,20 @@ const Perseverance = () => {
             </div>
             
             {data &&  <div className={classes.root}>
-                            <h3 className="title">Here are Perseverance photos on SOL {sol} taken with {camera} camera <br/> 
-                            <small className="title">*If it's loading no photos, choose another camera or SOL</small> </h3>
-                            <GridList cellHeight={700} className={classes.gridList} cols={2}>
+                            <h3 className="title"> 
+                            <small>*If it's loading no photos, choose another camera or SOL</small> 
+
+                            <br/>Here are Perseverance photos on SOL {sol} taken with {camera} camera 
+                                
+                            </h3>
+                            
+                            <ImageList cellHeight={700} className={classes.gridList} cols={2}>
                                 {data.photos.map(photo=> 
-                                    <GridListTile key={photo.img_src} cols={photo.cols || 1}>
+                                    <ImageListItem key={photo.img_src} cols={photo.cols || 1}>
                                         <img src={photo.img_src} alt={photo.camera.full_name} className="image" />
-                                    </GridListTile>
+                                    </ImageListItem>
                                 )}
-                            </GridList>
+                            </ImageList>
                         </div>
             }
             </div>
