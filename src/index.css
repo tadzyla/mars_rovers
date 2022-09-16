@@ -218,7 +218,7 @@ body {
     font-size: 20px;
   }
 
-  .makeStyles-root-1 ul li, .makeStyles-root-3 ul li {
+  .MuiImageListItem-root {
     height: 20rem !important;
   }
 }
@@ -251,7 +251,7 @@ body {
 
 @media screen and (max-width: 600px) {
 
-  .makeStyles-root-1 ul li, .makeStyles-root-3 ul li, .makeStyles-root-4 ul li{
+  .MuiImageListItem-root {
     height: 10rem !important;
   }
 
