@@ -3,6 +3,7 @@ import useFetch from './useFetch';
 import { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { ImageList, ImageListItem } from '@material-ui/core';
+import PerseveranceStats from './PerseveranceStats';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -28,15 +29,17 @@ const Perseverance = () => {
     return ( 
         <div>
             <h1 className="title">This is Perseverance page</h1>
+            <PerseveranceStats />
 
             
             {error && <div>{ error }</div>}
             {isPending && <div className="title">Getting photos from Mars, please be patient...</div> }
 
             <div className="search">
-                <h3 className="title">Search photos by number of SOL (Martian rotation) and camera type, gallery will load automatically</h3>
+            <h3 className="title">Search photos by number of SOL (Martian rotation) and camera type, gallery will load automatically</h3>
+
                 <form>
-                    <label className="label">Write sol number here</label>
+                    <label className="label">Sol number</label>
                     <input 
                     className="input"
                     type="text"
@@ -45,7 +48,7 @@ const Perseverance = () => {
                     onChange={(e) => setSol(e.target.value)}
                     />
                     
-                    <label className="label">Select camera type</label>
+                    <label className="label">Camera type</label>
                     <select
                         className="input"
                         value={camera}

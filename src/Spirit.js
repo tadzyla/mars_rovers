@@ -3,6 +3,7 @@ import useFetch from './useFetch';
 import { useState } from 'react';
 import { ImageList, ImageListItem } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
+import SpiritStats from './SpiritStats';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -26,19 +27,21 @@ const Spirit = () => {
     const [camera, setCamera] = useState('navcam')
     const { data, isPending, error } = useFetch(`https://api.nasa.gov/mars-photos/api/v1/rovers/spirit/photos?sol=${sol}&camera=${camera}&page=1&api_key=qQ3X7Uk2HHs4IDxWimSn50yxS6vAq87frJe5Dluy`);
     
-    
     return ( 
         <div>
             <h1 className="title">This is Spirit page</h1>
+            <SpiritStats />
 
             
             {error && <div>{ error }</div>}
+            
             {isPending && <div className="title">Getting photos from Mars, please be patient...</div> }
+
 
             <div className="search">
                 <h3 className="title">Search photos by number of SOL (Martian rotation) and camera type, gallery will load automatically</h3>
                 <form>
-                    <label className="label">Write sol number here</label>
+                    <label className="label">Sol number</label>
                     <input 
                     className="input"
                     type="text"
@@ -47,7 +50,7 @@ const Spirit = () => {
                     onChange={(e) => setSol(e.target.value)}
                     />
                     
-                    <label className="label">Select camera type</label>
+                    <label className="label">Camera type</label>
                     <select
                         className="input"
                         value={camera}
@@ -60,6 +63,12 @@ const Spirit = () => {
                 </form>
             </div>
             
+            {data === [] && <div className={classes.root}>
+                                <h3 className="title">Here are Spirit photos on SOL {sol} taken with {camera} camera <br/> 
+                                <small className="title">No photos</small> </h3>
+                            </div>
+            }
+
             {data &&  <div className={classes.root}>
                             <h3 className="title">Here are Spirit photos on SOL {sol} taken with {camera} camera <br/> 
                             <small className="title">*If it's loading no photos, choose another camera or SOL</small> </h3>

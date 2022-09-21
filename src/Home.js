@@ -33,7 +33,9 @@ const Home = () => {
 
         <div className="rovers_stats">
             {error && <div>{ error }</div>}
+            console.log({error})
             {isPending && <div className="title" >Getting information from Mars, please be patient...</div> }
+
             {data?.rovers.map(rover => 
                   <div>
                      <h3 style={{color: 'white', padding: '15px'}} > 

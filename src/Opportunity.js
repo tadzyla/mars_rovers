@@ -3,6 +3,7 @@ import useFetch from './useFetch';
 import { ImageList, ImageListItem } from '@material-ui/core';
 import { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
+import OpportunityStats from './OpportunityStats';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -32,11 +33,12 @@ const Opportunity = () => {
             
             {error && <div>{ error }</div>}
             {isPending && <div className="title">Getting photos from Mars, please be patient...</div> }
+            <OpportunityStats />
 
             <div className="search">
                 <h3 className="title">Search photos by number of SOL (Martian rotation) and camera type, gallery will load automatically</h3>
                 <form>
-                    <label className="label">Write sol number here</label>
+                    <label className="label">Sol number</label>
                     <input 
                     className="input"
                     type="text"
@@ -45,7 +47,7 @@ const Opportunity = () => {
                     onChange={(e) => setSol(e.target.value)}
                     />
                     
-                    <label className="label">Select camera type</label>
+                    <label className="label">Camera type</label>
                     <select
                         className="input"
                         value={camera}

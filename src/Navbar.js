@@ -21,6 +21,8 @@ const Navbar = () => {
                     <Link to="/perseverance" >Perseverance</Link>
                 </div>
 
+                <button onClick={() => {setIsExpanded(!isExpanded)}} className="menu"><img src="./rover.svg" alt="rover" />
+                
                 <div className={isExpanded ? "hamburger" : "unvisible_menu"}>
 
 
@@ -31,10 +33,13 @@ const Navbar = () => {
                     <Link onClick={() => {setIsExpanded(!isExpanded)}} to="/spirit" >Spirit</Link>
 
                     <Link onClick={() => {setIsExpanded(!isExpanded)}} to="/perseverance" >Perseverance</Link>
-                    
-                </div>
-                <button onClick={() => {setIsExpanded(!isExpanded)}} className="menu"><img src="./rover.svg" alt="rover" /></button>
 
+                    </div>
+
+                </button>
+
+
+                
         </nav>
      );
 }
