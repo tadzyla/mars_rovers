@@ -21,9 +21,9 @@ const useStyles = makeStyles((theme) => ({
 
 const Curiosity = () => {
     const classes = useStyles();
-    const [sol, setSol] = useState('14');
-    const [camera, setCamera] = useState('fhaz')
-    const { data, isPending, error } = useFetch(`https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=${sol}&camera=${camera}&page=1&api_key=qQ3X7Uk2HHs4IDxWimSn50yxS6vAq87frJe5Dluy`);
+    const [sol, setSol] = useState('1126');
+    const [camera, setCamera] = useState('mast')
+    const { data, isPending, error } = useFetch(`https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=${sol}&camera=${camera}&page=2&api_key=qQ3X7Uk2HHs4IDxWimSn50yxS6vAq87frJe5Dluy`);
     
     return ( 
         <div>
@@ -59,6 +59,10 @@ const Curiosity = () => {
                         <option style={{color: 'black'}} value="fhaz">Front Hazard Avoindance Camera</option>
                         <option style={{color: 'black'}} value="rhaz">Rear Hazard Avoindance Camera</option>
                         <option style={{color: 'black'}} value="navcam">Navigation Camera</option>
+                        <option style={{color: 'black'}} value="mahli">Mars Hand Lens Imager</option>
+                        <option style={{color: 'black'}} value="mardi">Mars Descent Imager</option>
+                        <option style={{color: 'black'}} value="mast">Mast Camera</option>
+
                     </select>
                 </form>
             </div>

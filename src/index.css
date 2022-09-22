@@ -104,7 +104,7 @@ body {
 
 .mars-title {
   position: relative;
-  margin-bottom: 15rem;
+  margin-bottom: 19rem;
   z-index: -1;
 }
 
@@ -314,7 +314,7 @@ figure img {
   }
 
   .mars-title {
-    margin-bottom: 11rem;
+    margin-bottom: 7rem;
   }
 
   h3 {

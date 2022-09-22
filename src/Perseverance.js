@@ -60,6 +60,11 @@ const Perseverance = () => {
                         <option style={{color: 'black'}} value="NAVCAM_LEFT">Navigation Camera - Left</option>
                         <option style={{color: 'black'}} value="MCZ_RIGHT">Mast Camera Zoom - Right</option>
                         <option style={{color: 'black'}} value="FRONT_HAZCAM_RIGHT_A">Front Hazard Avoidance Camera - Right</option>
+                        <option style={{color: 'black'}} value="EDL_RDCAM">Rover Down-Look Camera</option>
+                        <option style={{color: 'black'}} value="SKYCAM">MEDA Skycam</option>
+                        <option style={{color: 'black'}} value="SHERLOC_WATSON">SHERLOC WATSON Camera</option>
+                        <option style={{color: 'black'}} value="SUPERCAM_RMI">SuperCam Remote Micro Imager</option>
+                        <option style={{color: 'black'}} value="LCAM">Lander Vision System Camera</option>
                     </select>
                 </form>
             </div>

@@ -21,8 +21,8 @@ const useStyles = makeStyles((theme) => ({
 
 const Opportunity = () => {
     const classes = useStyles();
-    const [sol, setSol] = useState('15');
-    const [camera, setCamera] = useState('fhaz')
+    const [sol, setSol] = useState('123');
+    const [camera, setCamera] = useState('pancam')
     const { data, isPending, error } = useFetch(`https://api.nasa.gov/mars-photos/api/v1/rovers/opportunity/photos?sol=${sol}&camera=${camera}&page=1&api_key=qQ3X7Uk2HHs4IDxWimSn50yxS6vAq87frJe5Dluy`);
     
     
@@ -59,6 +59,7 @@ const Opportunity = () => {
                         <option style={{color: 'black'}} value="fhaz">Front Hazard Avoindance Camera</option>
                         <option style={{color: 'black'}} value="rhaz">Rear Hazard Avoindance Camera</option>
                         <option style={{color: 'black'}} value="navcam">Navigation Camera</option>
+                        <option style={{color: 'black'}} value="pancam">Panoramic Camera</option>
                     </select>
                 </form>
             </div>

@@ -62,6 +62,7 @@ const Spirit = () => {
                         <option style={{color: 'black'}} value="fhaz">Front Hazard Avoindance Camera</option>
                         <option style={{color: 'black'}} value="rhaz">Rear Hazard Avoindance Camera</option>
                         <option style={{color: 'black'}} value="navcam">Navigation Camera</option>
+                        <option style={{color: 'black'}} value="pancam">Panoramic Camera</option>
                     </select>
                 </form>
             </div>
