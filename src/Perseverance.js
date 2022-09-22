@@ -28,7 +28,10 @@ const Perseverance = () => {
     
     return ( 
         <div>
-            <h1 className="title">This is Perseverance page</h1>
+            <h1 className="title">Perseverance Rover</h1>
+            <figure>
+                <img src="./perseverance.png" alt="perseverance" />
+            </figure>
             <PerseveranceStats />
 
             

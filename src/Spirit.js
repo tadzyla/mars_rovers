@@ -29,7 +29,10 @@ const Spirit = () => {
     
     return ( 
         <div>
-            <h1 className="title">This is Spirit page</h1>
+            <h1 className="title">Spirit Rover</h1>
+            <figure>
+                <img src="./spirit1.png" alt="spirit" />
+            </figure>
             <SpiritStats />
 
             

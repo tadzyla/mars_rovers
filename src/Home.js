@@ -17,18 +17,18 @@ const Home = () => {
        
 
       <table className="table">
-            <tr>
-               <td><img className='favorite-photo' src="./1.jpg" alt="photo1" /></td>
-               <td><img className='favorite-photo' src="./1.jpeg" alt="photo2" /> </td>
-               <td><img className='favorite-photo' src="./2.jpg" alt="photo3" /> </td>
-               <td><img className='favorite-photo' src="./2.jpeg" alt="photo4" /> </td>
-            </tr>
-            <tr>
-               <td><img className='favorite-photo' src="./7.jpg" alt="photo5" /> </td>
-               <td><img className='favorite-photo' src="./8.jpeg" alt="photo6" /> </td>
-               <td><img className='favorite-photo' src="./8.jpg" alt="photo7" /> </td>
-               <td><img className='favorite-photo' src="./10.jpg" alt="photo8" /> </td>
-            </tr>
+            
+               <img className='favorite-photo' src="./1.jpg" alt="photo1" />
+               <img className='favorite-photo' src="./1.jpeg" alt="photo2" />
+               <img className='favorite-photo' src="./2.jpg" alt="photo3" />
+               <img className='favorite-photo' src="./2.jpeg" alt="photo4" />
+            
+           
+               <img className='favorite-photo' src="./7.jpg" alt="photo5" />
+               <img className='favorite-photo' src="./8.jpeg" alt="photo6" />
+               <img className='favorite-photo' src="./8.jpg" alt="photo7" />
+               <img className='favorite-photo' src="./10.jpg" alt="photo8" />
+            
       </table>
 
         <div className="rovers_stats">

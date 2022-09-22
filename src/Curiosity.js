@@ -27,7 +27,10 @@ const Curiosity = () => {
     
     return ( 
         <div>
-            <h1 className="title">This is Curiosity page</h1>
+            <h1 className="title">Curiosity Rover</h1>
+            <figure>
+                <img src="./curiosity1.png" alt="curiosity" />
+            </figure>
 
             
             {error && <div>{ error }</div>}

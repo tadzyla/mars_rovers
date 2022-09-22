@@ -28,7 +28,10 @@ const Opportunity = () => {
     
     return ( 
         <div>
-            <h1 className="title">This is Opportunity page</h1>
+            <h1 className="title">Opportunity Rover</h1>
+            <figure>
+                <img src="./opportunity.png" alt="opportunity" />
+            </figure>
 
             
             {error && <div>{ error }</div>}
