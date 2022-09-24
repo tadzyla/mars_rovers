@@ -1,0 +1,55 @@
+.facts-main {
+    margin-top: 10rem;
+}
+
+.facts-main :nth-child(2) {
+    flex-direction: row-reverse;
+}
+
+.facts-main :nth-child(6) {
+    flex-direction: row-reverse;
+}
+
+.facts-section {
+    margin: 0 0 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5rem;
+}
+
+.h3 {
+    text-align: center;
+    color: aliceblue;
+    margin-bottom: 2rem;
+}
+
+.facts-section p {
+    color: white;
+    line-height: 2rem;
+}
+
+.facts-image img {
+    width: 20rem;
+}
+
+
+@media screen and (max-width: 1000px) {
+    .facts-section {
+        display: block;
+    }
+
+    .facts-image {
+        margin-bottom: 2rem;
+        margin-left: 25%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    
+
+    .facts-image img{
+        width: 12rem;
+    }
+}
+

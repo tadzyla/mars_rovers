@@ -6,6 +6,7 @@ import Opportunity from './Opportunity';
 import Spirit from './Spirit';
 import Perseverance from './Perseverance';
 
+
 function App() {     // Switch component show only one router at the time
   return (
     <Router>

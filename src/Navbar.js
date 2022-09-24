@@ -8,7 +8,9 @@ const Navbar = () => {
 
     return ( 
         <nav className="navbar">
-                <div className='mars_link'><Link to="/">Mars Rovers</Link></div>
+                <div className='mars_link'>
+                    <Link to="/">Mars Rovers</Link>
+                </div>
 
                 <div className='nav_links'>
 
@@ -34,7 +36,7 @@ const Navbar = () => {
 
                     <Link onClick={() => {setIsExpanded(!isExpanded)}} to="/perseverance" >Perseverance</Link>
 
-                    </div>
+                </div>
 
                 </button>
 
