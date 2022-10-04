@@ -11,22 +11,50 @@
 }
 
 .facts-section {
+    background-color: rgba(245, 129, 91, 0.359);
+    padding: 1rem;
     margin: 0 0 10rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 5rem;
+    box-shadow:  0 8px 20px var(--theme-color);
+    border-radius: 1rem;
 }
 
 .h3 {
     text-align: center;
     color: aliceblue;
     margin-bottom: 2rem;
+    color: var(--theme-color);
 }
 
 .facts-section p {
     color: white;
     line-height: 2rem;
+}
+
+.nav-link  {
+    margin: 1rem 25%;
+    padding: 1rem;
+    border: 1px solid var(--theme-color);
+    border-radius: 10px;
+    width: 15%;
+    text-align: center;
+    transition: ease 200ms;
+}
+
+.nav-link:hover {
+    background-color: rgba(211, 155, 131, 0.197);
+    scale: 1.03;
+    box-shadow: 0 3px 20px var(--theme-color);
+    cursor: pointer;
+}
+
+.nav-link a {
+    color: var(--theme-color);
+    text-decoration: none;
+    font-weight: 600;
 }
 
 .facts-image img {

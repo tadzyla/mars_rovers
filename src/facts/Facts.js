@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import './facts.css'
 
 const Facts = () => {
@@ -18,6 +19,9 @@ const Facts = () => {
                     On February 13, 2019, NASA officials declared that the Opportunity mission was complete<br/>
                     Total odometry is 28.06 miles (45.16 kilometers).
                      </p>
+                <div className="nav-link">
+                    <Link to="/opportunity">Explore</Link>
+                </div>
                 </div>
             </div>
             <h3 className='h3'>Spirit</h3>
@@ -32,6 +36,9 @@ const Facts = () => {
                     The rover continued in a stationary science platform role until communication with Spirit stopped on March 22, 2010 (sol 2208)<br/>
                     NASA announced that efforts to communicate with the unresponsive rover had ended, calling the mission complete
                     </p>
+                    <div className="nav-link">
+                        <Link to="/spirit">Explore</Link>
+                    </div>
                 </div>
             </div>
             <h3 className='h3'>Curiosity</h3>
@@ -48,6 +55,9 @@ const Facts = () => {
                     In total, the rover carries 17 cameras: HazCams (8), NavCams (4), MastCams (2), MAHLI, MARDI, and ChemCam<br/>
                     As today Curiosity spent over 3600 SOLs on Mars
                     </p>
+                    <div className="nav-link">
+                        <Link to="/curiosity">Explore</Link>
+                    </div>
                 </div>
             </div>
             <h3 className='h3'>Perseverance</h3>
@@ -63,6 +73,9 @@ const Facts = () => {
                     The rover's goals include identifying ancient Martian environments capable of supporting life, seeking out evidence of former microbial life existing in those environments, collecting rock and soil samples to store on the Martian surface, and testing oxygen production from the Martian atmosphere to prepare for future crewed missions<br/>
                     As today rover spent over 500 SOLs on Mars
                     </p>
+                    <div className="nav-link">
+                        <Link to="/perseverance">Explore</Link>
+                    </div>
                 </div>
                 
 
